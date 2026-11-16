@@ -104,18 +104,19 @@ Para la prueba «sin conexión» se puede activar el modo avión en el emulador 
 
 ## Configuración de los emuladores
 
-> **PENDIENTE DE RELLENAR** con los datos reales de los emuladores usados.
-
 | | Emulador 1 (pantalla compacta) | Emulador 2 (pantalla grande) |
 | --- | --- | --- |
-| Dispositivo (perfil AVD) | _por rellenar_ | _por rellenar_ |
-| Tamaño / resolución | _por rellenar_ | _por rellenar_ |
-| Versión de Android / API | _por rellenar_ | _por rellenar_ |
-| Imagen del sistema | _por rellenar_ | _por rellenar_ |
+| Dispositivo (perfil AVD) | Pixel 10 Pro | Medium Tablet |
+| Tamaño / resolución | 1280 × 2856 px (427 × 952 dp), 480 dpi | 2560 × 1600 px (1280 × 800 dp), 320 dpi |
+| Versión de Android / API | Android 17 QPR1 (API 37.1) | Android 16 (API 36) |
+| Imagen del sistema | x86_64 | x86_64 |
+
+El emulador 1 tiene menos de 600 dp de ancho (diseño de una columna) y el emulador 2 tiene más de 600 dp
+(diseño de dos columnas), así que entre los dos se prueban las dos adaptaciones de pantalla.
 
 ## Pruebas realizadas
 
-> **Pendiente**: todavía no se han ejecutado las pruebas. Rellenar la columna «Resultado obtenido» tras probar en los dos emuladores.
+Pruebas ejecutadas en los dos emuladores descritos arriba.
 
 | Nº | Prueba | Resultado esperado | Resultado obtenido |
 | --- | --- | --- | --- |
@@ -140,18 +141,17 @@ Enlace al chat: _por rellenar_
 
 ## Capturas de pantalla
 
-| Listado principal | Formulario de creación | Consulta a la API | Interacción (p. ej. eliminar / compartir) |
-| --- | --- | --- | --- |
-| `capturas/listado.png`| `capturas/formulario.png`  | `capturas/api.png` | `capturas/interaccion.png`  |
+| Listado principal | Formulario de creación | Consulta a la API |
+| --- | --- | --- |
+| <img src="capturas/Listado.png" alt="Listado principal" width="250"> | <img src="capturas/Formulario.png" alt="Formulario de creación" width="250"> | <img src="capturas/api.png" alt="Consulta a la API" width="250"> |
 
-<!-- Cuando estén las capturas, sustituir la tabla por imágenes, por ejemplo:
-![Listado principal](capturas/listado.png)
--->
+| Interacción | Interacción | Interacción |
+| --- | --- | --- |
+| <img src="capturas/Interaccion.png" alt="Interacción" width="250"> | <img src="capturas/Interaccion1.png" alt="Interacción 1" width="250"> | <img src="capturas/Interaccion3.png" alt="Interacción 3" width="250"> |
 
 ## Incidencias conocidas
 
-- La aplicación compila (`assembleDebug`) y el análisis de lint no muestra avisos sobre el código propio, pero
-  **todavía no se ha probado en los emuladores** (ver la tabla de pruebas).
+- La aplicación compila (`assembleDebug`) y el análisis de lint no muestra avisos sobre el código propio.
 - Lint informa de que hay versiones más nuevas de AGP, Kotlin, Compose BOM y DataStore. Se han mantenido a
   propósito las versiones que traía el proyecto (y DataStore 1.2.1) para no cambiar la configuración base.
 - Lint marca como no usados los colores de la plantilla en `res/values/colors.xml`; no afectan al funcionamiento.
